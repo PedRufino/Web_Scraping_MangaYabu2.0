@@ -1,4 +1,4 @@
-# Prezado usuário, gostaria informar que o scraping do site MangaYabu foi interrompido devido ao encerramento das atividades do mesmo. Infelizmente, isso significa que não seremos capazes de fornecer mais atualizações ou dados provenientes deste site.
+## Prezado usuário, gostaria informar que o scraping do site MangaYabu foi interrompido devido ao encerramento das atividades do mesmo. Infelizmente, isso significa que não seremos capazes de fornecer mais atualizações ou dados provenientes deste site.
 
 # Web_Scraping_MangaYabu2.0
 Fiz a criação de um web scraping para fazer download de mangás do site MangaYabu, essa versão do código faz uma busca na API para encontrar o manga desejado.
