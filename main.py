@@ -146,15 +146,16 @@ class ChapterAndPage:
             response = requests.get(link["link"], headers=headers)
             soup = BeautifulSoup(response.text, "html.parser")
             list_link = soup.find("div", {"class": "section table-of-contents"})("img")
-            imagens = []
+            x = 0
             for link_page in list_link:
                 lk_pg = requests.get(link_page["src"], headers=headers)
                 file_image = Image.open(BytesIO(lk_pg.content))
-                file_image.convert("RGB")
-                imagens.append(file_image)
-            imagens[0].save(
-                f"{path}/{self.mg.title_folder}/Capítulo-{link['cap']}.pdf",
-                save_all=True,
-                append_images=imagens[1:],
-            )
+                os.makedirs(f"{path}/{self.mg.title_folder}/capitulo-{link['cap']}", exist_ok=True)
+                file_image.convert("RGB").save(f'{path}/{self.mg.title_folder}/capitulo-{link["cap"]}/Pagina-{x:02d}.jpg')
+                x += 1
+            # imagens[0].save(
+            #     f"{path}/{self.mg.title_folder}/Capítulo-{link['cap']}.pdf",
+            #     save_all=True,
+            #     append_images=imagens[1:],
+            # )
         pass
